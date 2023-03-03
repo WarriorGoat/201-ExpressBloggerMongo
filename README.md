@@ -1,1 +1,23 @@
-# 201-ExpressBloggerMongo
+# 201-ExpressBlogger
+
+- Create a new file /validation/blog.js:
+    - In /validation/blog.js: Create a basic validator function for blogData and add that function to the module.exports
+- In /routes/blogs.js:
+    - Import (require) the blogData validator function into routes/blogs.js
+    - Create one POST route /blogs/create-one to crate a new blog post
+        - NOTE: Do not forget to generate createdAt and lastModified keys in the new blog post
+    - Create on PUT route /blogs/update-one/:blogTitle to update a blog post
+    - Both of the above routes should run validations on the incoming blog post body data BEFORE either creating a new blog post or updating a blog post.  If the blog data is invalid, then a message should be sent in the http response indicating which validation failed and why.
+- Build out the blogData validator function to check for the following conditions:
+    - Text, title, and author are required fields adn they should be strings
+    - Title and author should be no more then 40 characters in length (letters + white spaces)
+- Stretch Goal
+    - If category is defined and has a length greater than 0
+        - There can be no more than 10 entries for a category
+        - all entries must be strings
+        - all categories must be in the following list of strings:
+            - "Lorem"
+            - "ipsum"
+            - "dolor"
+            - "sit"
+            - "amet"
