@@ -111,13 +111,13 @@ router.route("/get-many/:author").get(async (req, res, next) => {
 
 //Delete multiple blog posts by author
 router.route("/delete-many/:author").delete(async (req, res, next) => {
-    const blogsDeleted = await db()
-      .collection("sample_blogs")
-      .deleteMany({ author: req.params.author });
-    res.json({
-      sucess: true,
-      blog: blogsDeleted,
-    });
+  const blogsDeleted = await db()
+    .collection("sample_blogs")
+    .deleteMany({ author: req.params.author });
+  res.json({
+    sucess: true,
+    blog: blogsDeleted,
   });
+});
 
 module.exports = router;
