@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { db } = require("../mongo");
-const { validateBlogData } = require("../validation/blogs");
+// Not Used const { validateBlogData } = require("../validation/blogs");
 
 /* GET all blogs. */
 router.get("/all", async function (req, res, next) {
